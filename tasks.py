@@ -10,7 +10,7 @@ from invoke import task
 
 @task
 def pytest(c):
-    c.run('python -m pytest --cov=orion')
+    c.run('python -m pytest --cov=mlstars')
 
 
 @task
@@ -57,10 +57,8 @@ def readme(c):
     cwd = os.getcwd()
     os.makedirs(test_path, exist_ok=True)
     shutil.copy('README.md', test_path / 'README.md')
-    shutil.copy('orion/evaluation/README.md', test_path / 'README_evaluate.md')
     os.chdir(test_path)
     c.run('rundoc run --single-session python3 -t python3 README.md')
-    c.run('rundoc run --single-session python3 -t python3 README_evaluate.md')
     os.chdir(cwd)
     shutil.rmtree(test_path)
 
@@ -68,8 +66,6 @@ def readme(c):
 @task
 def tutorials(c):
     for ipynb_file in glob.glob('tutorials/*.ipynb') + glob.glob('tutorials/**/*.ipynb'):
-        if 'OrionDBExplorer' in ipynb_file: # skip db testing
-            continue
         if '.ipynb_checkpoints' not in ipynb_file:
             c.run((
                 'jupyter nbconvert --execute --ExecutePreprocessor.timeout=4200 '
@@ -79,8 +75,8 @@ def tutorials(c):
 
 @task
 def lint(c):
-    c.run('flake8 orion tests')
-    c.run('isort -c --recursive orion tests')
+    c.run('flake8 mlstars tests')
+    c.run('isort -c --recursive mlstars tests')
 
 
 @task
@@ -108,7 +104,7 @@ def checkdeps(c, path):
             started = True
 
     c.run(
-        f'pip freeze | grep -v \"sintel-dev/Orion.git\" | '
+        f'pip freeze | grep -v \"sintel-dev/mlstars.git\" | '
         f'grep -E \'{"|".join(packages)}\' > {path}'
     )
 
