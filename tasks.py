@@ -68,7 +68,7 @@ def tutorials(c):
     for ipynb_file in glob.glob('tutorials/*.ipynb') + glob.glob('tutorials/**/*.ipynb'):
         if '.ipynb_checkpoints' not in ipynb_file:
             c.run((
-                'jupyter nbconvert --execute --ExecutePreprocessor.timeout=4200 '
+                'jupyter nbconvert --execute --ExecutePreprocessor.timeout=3600 '
                 f'--to=html --stdout {ipynb_file}'
             ), hide='out')
 
