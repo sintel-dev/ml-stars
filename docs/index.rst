@@ -7,10 +7,6 @@
 
 |Development Status| |PyPi Shield|
 
-<!-- Uncomment these lines after releasing the package to PyPI for version and downloads badges -->
-<!--[![PyPI Shield](https://img.shields.io/pypi/v/mlstars.svg)](https://pypi.python.org/pypi/ml-stars)-->
-<!--[![Downloads](https://pepy.tech/badge/mlstars)](https://pepy.tech/project/ml-stars)-->
-[![Github Actions Shield](https://img.shields.io/github/workflow/status/sarahmish/ml-stars/Run%20Tests)](https://github.com/sarahmish/ml-stars/actions)
 
 ml-stars
 ========
