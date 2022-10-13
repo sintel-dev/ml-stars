@@ -2,5 +2,5 @@
 Credits
 =======
 
-* Sarah <smish@mit.edu>
+* Sarah Alnegheimish <smish@mit.edu>
 * Kalyan Veeramachaneni <kalyan@csail.mit.edu>

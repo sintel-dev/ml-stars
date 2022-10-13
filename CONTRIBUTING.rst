@@ -223,13 +223,13 @@ dependency specification, either in ``setup.py``::
 
     install_requires = [
         ...
-        'mlstars>=X.Y.Z.dev',
+        'ml-stars>=X.Y.Z.dev',
         ...
     ]
 
 or in command line::
 
-    pip install 'mlstars>=X.Y.Z.dev'
+    pip install 'ml-stars>=X.Y.Z.dev'
 
 
 .. _GitHub issues page: https://github.com/sarahmish/ml-stars/issues
