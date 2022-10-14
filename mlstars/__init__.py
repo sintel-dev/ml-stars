@@ -3,3 +3,17 @@
 __author__ = 'MIT Data To AI Lab'
 __email__ = 'dailabmit@gmail.com'
 __version__ = '0.1.0.dev0'
+
+import os
+
+from mlblocks import MLBlock
+
+_BASE_PATH = os.path.abspath(os.path.dirname(__file__))
+MLBLOCKS_PRIMITIVES = os.path.join(_BASE_PATH, 'primitives', 'jsons')
+MLBLOCKS_PIPELINES = os.path.join(_BASE_PATH, 'pipelines')
+
+
+def load_primitive(primitive, arguments=None):
+    arguments = arguments or dict()
+
+    return MLBlock(primitive, **arguments)
