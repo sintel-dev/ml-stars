@@ -1,16 +1,17 @@
 {
-    "name": "keras.Sequential.LSTMSeq2Seq",
+    "name": "keras.Sequential.LSTMTimeSeriesRegressor",
     "contributors": [
-        "Dongyu Liu <dongyu@mit.edu>",
-        "Sarah Alnegheimish <smish@mit.edu>"
+        "Ihssan Tinawi <itinawi@mit.edu>",
+        "Carles Sala <csala@csail.mit.edu>"
     ],
-    "description": "LSTM autoencoder.",
+    "documentation": "https://arxiv.org/pdf/1802.04431.pdf",
+    "description": "Double Stacked LSTM Time Series Regressor similar to the one described in the paper referenced as documentation.",
     "classifiers": {
         "type": "estimator",
         "subtype": "regressor"
     },
     "modalities": [],
-    "primitive": "mlprimitives.adapters.keras.Sequential",
+    "primitive": "mlstars.adapters.keras.Sequential",
     "fit": {
         "method": "fit",
         "args": [
@@ -47,7 +48,11 @@
             },
             "verbose": {
                 "type": "bool",
-                "default": true
+                "default": false
+            },
+            "epochs": {
+                "type": "int",
+                "default": 35
             },
             "callbacks": {
                 "type": "list",
@@ -70,21 +75,14 @@
                 "type": "int",
                 "default": 64
             },
-            "window_size": {
-                "type": "int",
-                "default": 250
-            },
             "input_shape": {
                 "type": "tuple",
-                "default": [
-                    250,
-                    1
-                ]
+                "default": null
             },
-            "target_shape": {
-                "type": "tuple",
-                "description": "Shape of target",
-                "default": [250, 1]
+            "dense_units": {
+                "type": "int",
+                "description": "Number of values ahead to predict",
+                "default": 1
             },
             "optimizer": {
                 "type": "str",
@@ -100,10 +98,6 @@
                     "mse"
                 ]
             },
-            "epochs": {
-                "type": "int",
-                "default": 35
-            },
             "return_sequences": {
                 "type": "bool",
                 "default": false
@@ -115,39 +109,70 @@
                         "class": "keras.layers.LSTM",
                         "parameters": {
                             "input_shape": "input_shape",
-                            "units": 60
+                            "units": "lstm_1_units",
+                            "return_sequences": true
                         }
                     },
                     {
-                        "class": "keras.layers.RepeatVector",
+                        "class": "keras.layers.Dropout",
                         "parameters": {
-                            "n": "window_size"
+                            "rate": "dropout_1_rate"
                         }
                     },
                     {
                         "class": "keras.layers.LSTM",
                         "parameters": {
-                            "units": 60,
-                            "return_sequences": true
+                            "units": "lstm_2_units",
+                            "return_sequences": false
                         }
                     },
                     {
-                        "class": "keras.layers.TimeDistributed",
+                        "class": "keras.layers.Dropout",
                         "parameters": {
-                            "layer": {
-                                "class": "keras.layers.Dense",
-                                "parameters": {
-                                    "units": 1
-                                }
-                            }
+                            "rate": "dropout_2_rate"
                         }
                     },
                     {
-                        "class": "keras.layers.Reshape",
+                        "class": "keras.layers.Dense",
                         "parameters": {
-                            "target_shape": "target_shape"
+                            "units": "dense_units",
+                            "activation": "linear"
                         }
                     }
+                ]
+            }
+        },
+        "tunable": {
+            "lstm_1_units": {
+                "type": "int",
+                "default": 80,
+                "range": [
+                    1,
+                    500
+                ]
+            },
+            "dropout_1_rate": {
+                "type": "float",
+                "default": 0.3,
+                "range": [
+                    0.01,
+                    0.75
+                ]
+            },
+            "lstm_2_units": {
+                "type": "int",
+                "default": 80,
+                "range": [
+                    1,
+                    500
+                ]
+            },
+            "dropout_2_rate": {
+                "type": "float",
+                "default": 0.3,
+                "range": [
+                    0.01,
+                    0.75
                 ]
             }
         }

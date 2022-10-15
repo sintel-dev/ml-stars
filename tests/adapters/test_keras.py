@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import pickle
 from unittest import TestCase
 
-import pickle
 import numpy as np
 import tensorflow as tf
 
-from mlstars.adapters.keras import build_layer, Sequential
-
+from mlstars.adapters.keras import Sequential, build_layer
 
 TEST_LAYER = {
     "class": "keras.layers.Dense",
@@ -41,19 +40,19 @@ TEST_HYPERPARAMETER = {
 def test_build_layer():
     built_layer = build_layer(TEST_LAYER, None)
 
-    assert tf.keras.layers.Dense is type(built_layer)
+    assert isinstance(built_layer, tf.keras.layers.Dense)
 
 
 def test_build_wrapper_layer():
     built_layer = build_layer(TEST_LAYER_WRAPPER, None)
 
-    assert tf.keras.layers.TimeDistributed is type(built_layer)
+    assert isinstance(built_layer, tf.keras.layers.TimeDistributed)
 
 
 def test_build_layer_hyperparameters():
     built_layer = build_layer(TEST_HYPERPARAMETER, {"drop_rate": 0.1})
 
-    assert tf.keras.layers.Dropout is type(built_layer)
+    assert isinstance(built_layer, tf.keras.layers.Dropout)
     assert built_layer.rate == 0.1
 
 
@@ -139,18 +138,18 @@ class SequentialTest(TestCase):
 
         # Assert
         assert kwargs == {'input_shape': (3, 4)}
-    
+
     def test_fit(self):
         # Setup
         sequential = Sequential(self.layers, self.loss, self.optimizer, self.classification)
-        
+
         # Run
         sequential.fit(np.random.rand(10,), self.output)
 
     def test_fit_predict(self):
         # Setup
         sequential = Sequential(self.layers, self.loss, self.optimizer, self.classification)
-        
+
         # Run
         sequential.fit(self.input, self.output)
         output = sequential.predict(self.input)
@@ -164,7 +163,7 @@ class SequentialTest(TestCase):
 
         # Run
         sequential.fit(self.input, self.output)
-        output = sequential.predict(self.input)
+        sequential.predict(self.input)
 
     def test_callback(self):
         # Setup
@@ -173,14 +172,14 @@ class SequentialTest(TestCase):
         }]
 
         # Run
-        sequential = Sequential(None, None, None, None, callbacks=callbacks)
-        
+        Sequential(None, None, None, None, callbacks=callbacks)
+
     def test_save_load(self):
         # Setup
         sequential = Sequential(self.layers, self.loss, self.optimizer, self.classification)
         sequential.fit(self.input, self.output)
         path = 'some_path.pkl'
-        
+
         # Run
         with open(path, 'wb') as pickle_file:
             pickle.dump(sequential, pickle_file)
@@ -189,4 +188,4 @@ class SequentialTest(TestCase):
             new_sequential = pickle.load(pickle_file)
 
         # Assert
-        assert type(new_sequential) is type(sequential)
+        assert isinstance(new_sequential, type(sequential))

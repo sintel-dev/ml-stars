@@ -16,6 +16,7 @@ install_requires = [
     'tensorflow>=2.2',
     'numpy>=1.17.4',
     'pandas>=1',
+    'statsmodels>=0.12',
 ]
 
 setup_requires = [

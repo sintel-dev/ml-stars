@@ -13,7 +13,7 @@ def import_object(object_name):
         parent_name, attribute = object_name.rsplit('.', 1)
         try:
             parent = importlib.import_module(parent_name)
-        
+
         except ImportError:
             grand_parent_name, parent_name = parent_name.rsplit('.', 1)
             grand_parent = importlib.import_module(grand_parent_name)
