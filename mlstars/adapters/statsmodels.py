@@ -16,8 +16,8 @@ class ARIMA(object):
             q (int):
                 Integer denoting the order of the moving-average model.
             trend (str):
-                Parameter controlling the deterministic trend. Can be specified 
-                as a string where 'c' indicates a constant term, 't' indicates 
+                Parameter controlling the deterministic trend. Can be specified
+                as a string where 'c' indicates a constant term, 't' indicates
                 a linear trend in time, and 'ct' includes both.
             steps (int):
                 Integer denoting the number of time steps to predict ahead.
@@ -50,7 +50,7 @@ class ARIMA(object):
 
         num_sequences = len(X)
         for sequence in range(num_sequences):
-            arima = statsmodels.tsa.arima.model.ARIMA(X[sequence], 
+            arima = statsmodels.tsa.arima.model.ARIMA(X[sequence],
                                                       order=(self.p, self.d, self.q),
                                                       trend=self.trend)
             arima_fit = arima.fit()

@@ -9,7 +9,7 @@ import tensorflow as tf
 from mlstars.adapters.keras import Sequential, build_layer
 
 TEST_LAYER = {
-    "class": "keras.layers.Dense",
+    "class": "tensorflow.keras.layers.Dense",
     "parameters": {
         "units": 5
     }
@@ -17,10 +17,10 @@ TEST_LAYER = {
 
 
 TEST_LAYER_WRAPPER = {
-    "class": "keras.layers.TimeDistributed",
+    "class": "tensorflow.keras.layers.TimeDistributed",
     "parameters": {
         "layer": {
-            "class": "keras.layers.Dense",
+            "class": "tensorflow.keras.layers.Dense",
             "parameters": {
                 "units": 1
             }
@@ -30,7 +30,7 @@ TEST_LAYER_WRAPPER = {
 
 
 TEST_HYPERPARAMETER = {
-    "class": "keras.layers.Dropout",
+    "class": "tensorflow.keras.layers.Dropout",
     "parameters": {
         "rate": "drop_rate"
     }
@@ -61,14 +61,14 @@ class SequentialTest(TestCase):
     def setup_class(cls):
         cls.layers = [
             {
-                "class": "keras.layers.Layer",
+                "class": "tensorflow.keras.layers.Layer",
                 "parameters": {}
             }
         ]
 
-        cls.loss = "keras.losses.mean_squared_error"
+        cls.loss = "tensorflow.keras.losses.mean_squared_error"
 
-        cls.optimizer = "keras.optimizers.Adam"
+        cls.optimizer = "tensorflow.keras.optimizers.Adam"
 
         cls.classification = False
 
@@ -168,7 +168,7 @@ class SequentialTest(TestCase):
     def test_callback(self):
         # Setup
         callbacks = [{
-            "class": "keras.callbacks.EarlyStopping"
+            "class": "tensorflow.keras.callbacks.EarlyStopping"
         }]
 
         # Run

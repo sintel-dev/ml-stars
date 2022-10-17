@@ -1,7 +1,7 @@
-import pytest
 from unittest.mock import patch
 
 import numpy as np
+import pytest
 from numpy.testing import assert_allclose
 
 from mlstars.adapters.statsmodels import ARIMA
@@ -59,6 +59,7 @@ def test_predict_2d():
         [16, 17, 18]
     ])
     assert_allclose(result, expected, rtol=1e-4)
+
 
 @patch('statsmodels.tsa.arima.model.ARIMA')
 def test_arima_3d(arima_mock):
