@@ -17,10 +17,13 @@ install_requires = [
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
     'statsmodels>=0.9.0,<0.13',
-    'tensorflow>=2,<2.5',
+    'tensorflow>=2.2,<2.5',
     'scikit-learn>=0.21',
     'scipy>=1.1.0,<2',
     'xgboost>=0.72.1,<1',
+
+    # fix google/protobuf/descriptor
+    'protobuf<4',
 ]
 
 setup_requires = [
