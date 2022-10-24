@@ -13,13 +13,13 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
 
 install_requires = [
     'Keras>=2.4,<2.5',
-    'mlblocks>=0.4',
+    'mlblocks>=0.4,<0.5',
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
-    'statsmodels>=0.9.0,<0.13',
-    'tensorflow>=2.2,<2.5',
     'scikit-learn>=0.21',
     'scipy>=1.1.0,<2',
+    'statsmodels>=0.9.0,<0.13',
+    'tensorflow>=2,<2.5',
     'xgboost>=0.72.1,<1',
 
     # fix google/protobuf/descriptor
