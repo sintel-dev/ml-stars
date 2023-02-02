@@ -15,6 +15,11 @@ install_requires = [
     'mlblocks>=0.4,<0.6',
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
+<<<<<<< HEAD
+=======
+    'statsmodels>=0.9.0,<0.13',
+    'tensorflow>=2.2,<2.5',
+>>>>>>> fix minimum and protobuf error
     'scikit-learn>=0.21',
     'scipy>=1.1.0,<2',
     'statsmodels>=0.9.0,<0.13',
