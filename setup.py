@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-"""The setup script."""
-
 from setuptools import setup, find_packages
 
 with open('README.md', encoding='utf-8') as readme_file:
@@ -13,7 +11,7 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
 
 install_requires = [
     'Keras>=2.4,<2.5',
-    'mlblocks>=0.4,<0.5',
+    'mlblocks>=0.4,<0.6',
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
     'scikit-learn>=0.21',
@@ -51,6 +49,7 @@ development_requires = [
     'autodocsumm>=0.1.10,<1',
     'markupsafe<2.1.0',
     'ipython>=6.5,<7.5',
+    'mistune>=0.7,<2',
     'Jinja2>=2,<3',
     
     # style check
@@ -60,6 +59,7 @@ development_requires = [
     # fix style issues
     'autoflake>=1.2',
     'autopep8>=1.4.3',
+    'importlib-metadata<5',
 
     # distribute on PyPI
     'twine>=1.10.0',
