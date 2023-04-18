@@ -14,7 +14,7 @@ install_requires = [
     'mlblocks>=0.4,<0.6',
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
-    'scikit-learn>=0.21',
+    'scikit-learn>=0.21,<1.2',
     'scipy>=1.1.0,<2',
     'statsmodels>=0.9.0,<0.13',
     'tensorflow>=2,<2.5',
@@ -108,6 +108,6 @@ setup(
     test_suite='tests',
     tests_require=tests_require,
     url='https://github.com/sintel-dev/ml-stars',
-    version='0.1.0.dev0',
+    version='0.1.0.dev2',
     zip_safe=False,
 )
