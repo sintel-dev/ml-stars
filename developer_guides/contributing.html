@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Contributing Guidelines &#8212; ml-stars 0.1.1.dev0 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/dai-logo-white.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Contributing Custom Primitives" href="custom.html" />
+    <link rel="prev" title="Welcome to the Community" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/dai-logo-white-200.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../getting_started/index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Welcome to the Community</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../history.html">Release Notes</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/sintel-dev/ml-stars" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+          
+            
+                <li class="active">
+                    <a href="">Contributing Guidelines</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="custom.html">Contributing Custom Primitives</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="annotations.html">Contributing Annotations</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="adapters.html">Contributing Adapters</a>
+                </li>
+            
+          
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#general-coding-guidelines" class="nav-link">General Coding Guidelines</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#unit-testing-guidelines" class="nav-link">Unit Testing Guidelines</a>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="contributing-guidelines">
+<span id="contributing"></span><h1>Contributing Guidelines<a class="headerlink" href="#contributing-guidelines" title="Permalink to this headline">¶</a></h1>
+<p>Ready to contribute with your own code? Great!</p>
+<p>Before diving deeper into the contributing guidelines, please make sure to having read
+the <a class="reference internal" href="../getting_started/concepts.html#concepts"><span class="std std-ref">Basic Concepts</span></a> section and to have installed the project and its development dependencies.</p>
+<p>Afterwards, please make sure to read the following contributing guidelines carefully, and
+later on head to the step-by-step guides for each possible type of contribution.</p>
+<section id="general-coding-guidelines">
+<h2>General Coding Guidelines<a class="headerlink" href="#general-coding-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>Once you have set up your development environment, you are ready to start working on your
+python code.</p>
+<p>When doing so, make sure to follow these guidelines:</p>
+<ol class="arabic">
+<li><p>If it does not exist yet, create a new GitHub issue requesting the new primitive. As indicated
+previously, provide as many details as possible about the new primitive, like links to the
+documentation, what it does and what it is useful for.</p></li>
+<li><p>Indicate in the issue description or in a comment that you are available to apply the changes
+yourself.</p></li>
+<li><p>Wait for the feedback from the maintainers, who will approve the issue and assign it to you,
+before proceeding to implement any changes. Be open to discuss with them about the need
+of adding this primitive, as maybe there are other primitive that offer the same functionality,
+and about the best approach to add it.</p></li>
+<li><p>Once the issue has been approved and assigned to you, implement the necessary changes in your
+own fork of the project. Please implement them in a branch named after the issue number and
+title, as this makes keeping track of the history of the project easier in the long run.</p>
+<p>You can create such a branch with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b name-of-your-bugfix-or-feature
+</pre></div>
+</div>
+</li>
+<li><p>While hacking your changes, make sure to cover all your developments with the required
+unit tests, and that none of the old tests fail as a consequence of your changes.
+For this, make sure to run the tests suite and check the code coverage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make test       # Run the tests
+$ make coverage   # Get the coverage report
+</pre></div>
+</div>
+</li>
+<li><p>If you are developing new primitives that can work as part of a Pipeline, please also
+add a demo pipeline inside the <code class="docutils literal notranslate"><span class="pre">mlstars/mlstars</span></code> folder and validate that it is
+running properly with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mlstars test mlstars/pipelines/the_file_of_your_pipeline.json
+</pre></div>
+</div>
+</li>
+<li><p>When you’re done making changes, check that your changes pass flake8 and the
+tests, including testing other Python versions with tox:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make lint       # Check code styling
+$ make test-all   # Execute tests on all python versions
+</pre></div>
+</div>
+</li>
+<li><p>Make also sure to include the necessary documentation in the code as docstrings following
+the <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">google docstring</a> style.
+If you want to view how your documentation will look like when it is published, you can
+generate and view the docs with this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ make viewdocs
+</pre></div>
+</div>
+</li>
+<li><p>Commit your changes and push your branch to GitHub:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add .
+$ git commit -m &quot;Your detailed description of your changes.&quot;
+$ git push origin name-of-your-bugfix-or-feature
+</pre></div>
+</div>
+</li>
+<li><p>Submit a pull request through the GitHub website and wait for feedback from the maintainers.</p></li>
+</ol>
+</section>
+<section id="unit-testing-guidelines">
+<h2>Unit Testing Guidelines<a class="headerlink" href="#unit-testing-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>If you are going to contribute Python code, we will ask you to write unit tests that cover
+your development, following these requirements:</p>
+<ol class="arabic simple">
+<li><p>Unit Tests should be based only in unittest and pytest modules.</p></li>
+<li><p>The tests that cover a module called <code class="docutils literal notranslate"><span class="pre">mlstars/path/to/a_module.py</span></code> should be
+implemented in a separated module called <code class="docutils literal notranslate"><span class="pre">tests/mlstars/path/to/test_a_module.py</span></code>.
+Note that the module name has the <code class="docutils literal notranslate"><span class="pre">test_</span></code> prefix and is located in a path similar
+to the one of the tested module, just inside the <code class="docutils literal notranslate"><span class="pre">tests</span></code> folder.</p></li>
+<li><p>Each method of the tested module should have at least one associated test method, and
+each test method should cover only <strong>one</strong> use case or scenario.</p></li>
+<li><p>Test case methods should start with the <code class="docutils literal notranslate"><span class="pre">test_</span></code> prefix and have descriptive names
+that indicate which scenario they cover.
+Names such as <code class="docutils literal notranslate"><span class="pre">test_some_methed_input_none</span></code>, <code class="docutils literal notranslate"><span class="pre">test_some_method_value_error</span></code> or
+<code class="docutils literal notranslate"><span class="pre">test_some_method_timeout</span></code> are right, but names like <code class="docutils literal notranslate"><span class="pre">test_some_method_1</span></code>,
+<code class="docutils literal notranslate"><span class="pre">some_method</span></code> or <code class="docutils literal notranslate"><span class="pre">test_error</span></code> are not.</p></li>
+<li><p>Each test should validate only what the code of the method being tested does, and not
+cover the behavior of any third party package or tool being used, which is assumed to
+work properly as far as it is being passed the right values.</p></li>
+<li><p>Any third party tool that may have any kind of random behavior, such as some Machine
+Learning models, databases or Web APIs, will be mocked using the <code class="docutils literal notranslate"><span class="pre">mock</span></code> library, and
+the only thing that will be tested is that our code passes the right values to them.</p></li>
+<li><p>Unit tests should not use anything from outside the test and the code being tested. This
+includes not reading or writing to any file system or database, which will be properly
+mocked.</p></li>
+</ol>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Welcome to the Community</a>
+    <a class='right-next' id="next-link" href="custom.html" title="next page">Contributing Custom Primitives</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2022, MIT Data To AI Lab.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

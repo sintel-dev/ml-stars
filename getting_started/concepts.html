@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic Concepts &#8212; ml-stars 0.1.1.dev0 documentation</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="shortcut icon" href="../_static/dai-logo-white.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Welcome to the Community" href="../developer_guides/index.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+<div class="container-xl">
+
+    <a class="navbar-brand" href="../index.html">
+    
+      <img src="../_static/dai-logo-white-200.png" class="logo" alt="logo" />
+    
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
+      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+        
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="index.html">Getting Started</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../developer_guides/index.html">Welcome to the Community</a>
+        </li>
+        
+        <li class="nav-item ">
+            <a class="nav-link" href="../history.html">Release Notes</a>
+        </li>
+        
+        
+      </ul>
+
+
+      
+
+      <ul class="navbar-nav">
+        
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/sintel-dev/ml-stars" target="_blank" rel="noopener">
+              <span><i class="fab fa-github-square"></i></span>
+            </a>
+          </li>
+        
+        
+      </ul>
+    </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+    <div class="bd-toc-item active">
+    
+  
+    <ul class="nav bd-sidenav">
+        
+        
+          
+            
+                <li class="">
+                    <a href="install.html">Installation</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="quickstart.html">Quickstart</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="">Basic Concepts</a>
+                </li>
+            
+          
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
+          </div>
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#what-is-a-primitive" class="nav-link">What is a primitive?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#types-of-primitives" class="nav-link">Types of Primitives</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#function-primitives" class="nav-link">Function Primitives</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#class-primitives" class="nav-link">Class Primitives</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#types-of-integrations" class="nav-link">Types of Integrations</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#directly-integrable-primitives" class="nav-link">Directly integrable primitives</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#examples" class="nav-link">Examples</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#primitives-that-require-a-python-adapter" class="nav-link">Primitives that require a Python adapter</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#id1" class="nav-link">Examples</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#custom-primitives" class="nav-link">Custom primitives</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#id2" class="nav-link">Examples</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+              
+          </div>
+          
+
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="basic-concepts">
+<span id="concepts"></span><h1>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h1>
+<p>Before diving into advanced usage and contributions, let’s review the basic concept of the
+library to help you get started.</p>
+<section id="what-is-a-primitive">
+<h2>What is a primitive?<a class="headerlink" href="#what-is-a-primitive" title="Permalink to this headline">¶</a></h2>
+<p>A primitive is a data processing block. Along with a code that does the processing on the data,
+a primitive also has an associated JSON file that has a number of annotations. These annotations
+help automated algorithms to interpret the primitive, and data scientists to construct machine
+learning pipelines with proper provenance and full transparency about each individual components.</p>
+</section>
+<section id="types-of-primitives">
+<h2>Types of Primitives<a class="headerlink" href="#types-of-primitives" title="Permalink to this headline">¶</a></h2>
+<p>Not all primitives are the same, so in the following sections we review which types of
+primitives there are.</p>
+<section id="function-primitives">
+<h3>Function Primitives<a class="headerlink" href="#function-primitives" title="Permalink to this headline">¶</a></h3>
+<p>The most simple type of primitives are simple functions that can be called directly, without
+the need to created any class instance before.</p>
+<p>In most cases, if not all, these functions do not have any associated learning process, and their
+behavior is always the same both during the fitting and the predicting phases of the pipeline.</p>
+<p>A simple example of such a primitive would be the <code class="docutils literal notranslate"><span class="pre">numpy.argmax</span></code> function, which expects a 2
+dimensional array as input, and returns a 1 dimensional array that indicates the index of
+the maximum values along an axis.</p>
+</section>
+<section id="class-primitives">
+<h3>Class Primitives<a class="headerlink" href="#class-primitives" title="Permalink to this headline">¶</a></h3>
+<p>A more complex type of primitives are classes which need to be instantiated before they can be
+used.</p>
+<p>In most cases, these classes will have an associated learning process, and they will have some
+fit method or equivalent that will be called during the fitting phase but not during the
+predicting one.</p>
+<p>A simple example of such a primitive would be the <code class="docutils literal notranslate"><span class="pre">sklearn.preprocessing.StandardScaler</span></code> class,
+which is used to standardize a set of values by calculating their z-score, which means centering
+them around 0 and scaling them to unit variance.</p>
+<p>This primitive has an associated learning process, where it calculates the mean and standard
+deviation of the training data, to later on use them to transform the prediction data to the same
+center and scale.</p>
+</section>
+</section>
+<section id="types-of-integrations">
+<h2>Types of Integrations<a class="headerlink" href="#types-of-integrations" title="Permalink to this headline">¶</a></h2>
+<p>Also, primitives can be classified depending on how they are integrated into the project.</p>
+<section id="directly-integrable-primitives">
+<h3>Directly integrable primitives<a class="headerlink" href="#directly-integrable-primitives" title="Permalink to this headline">¶</a></h3>
+<p>Some libraries already follow the <cite>fit-produce</cite> abstraction. That is, they already have several
+data processing building blocks that have this abstraction. A good example of these type of
+primitives are most of the estimators from the scikit-learn library. These building blocks usually
+have these characteristics:</p>
+<ul class="simple">
+<li><p>Tunable hyperparameters are simple values of the supported basic types:
+* <code class="docutils literal notranslate"><span class="pre">str</span></code>
+* <code class="docutils literal notranslate"><span class="pre">bool</span></code>
+* <code class="docutils literal notranslate"><span class="pre">int</span></code>
+* <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p>Creating the class instance or calling the fit or produce methods does not require building
+any complex structure before the call is made.</p></li>
+<li><p>The fitting and predicting phase consist of a single method or function call each.</p></li>
+</ul>
+<p>In this case, no additional code is necessary to adapt them and those blocks can be brought into
+ml-stars using nothing else than a single JSON annotation file, which can be found in the
+<a class="reference external" href="https://github.com/sintel-dev/ml-stars/blob/master/mlstars/primitives">mlstars/primitives folder</a>.</p>
+<section id="examples">
+<h4>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sintel-dev/mlstars/blob/master/mlstars/primitives/numpy.argmax.json">numpy.argmax</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ml-stars/mlstars/blob/master/mlstars/primitives/sklearn.preprocessing.StandardScaler.json">sklearn.preprocessing.StandardScaler</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sintel-dev/ml-stars/blob/master/mlstars/primitives/xgboost.XGBClassifier.json">xgboost.XGBClassifier</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the code is directly usable then why create a JSON annotation file? While the code is
+directly usable, most building blocks do not have an associated metadata we need for
+automation. Usually when using scikit-learn for example, a data scientist goes through
+the documentation to understand different hyperparameters, their ranges and has to do a
+lot of manual inference before they can use them.</p>
+</div>
+</section>
+</section>
+<section id="primitives-that-require-a-python-adapter">
+<h3>Primitives that require a Python adapter<a class="headerlink" href="#primitives-that-require-a-python-adapter" title="Permalink to this headline">¶</a></h3>
+<p>The second type of primitives are the ones that need some kind of adaptation process to fit to our
+API, but whose behaviour is not altered in any way by this process. The type of primitives that
+are integrated in this way are the ones that have some of these characteristics:</p>
+<ul class="simple">
+<li><p>Need some additional steps after the instantiation in order to be prepared to run.</p></li>
+<li><p>The tunable hyperparameters need some kind of transformation or instantiation before they can be
+passed to the primitive.</p></li>
+<li><p>The primitive cannot be directly applied to the inputs or the outputs, we support, and need to
+be manipulated in some way before they can be passed to any other primitive.</p></li>
+</ul>
+<p>Some examples of these primitives are the Keras models, which need to be built in several steps
+and later on compiled before they can be used, or some image transformation primitives which need
+to be applied to the images one by one. These primitives consist of some Python code which can be
+found in the <code class="docutils literal notranslate"><span class="pre">mlstars.adapters</span></code> module, as well as JSON annotations that point at the
+corresponding functions or classes, which can also be found in the <a class="reference external" href="https://github.com/sintel-dev/ml-stars/blob/master/mlstars/primitives">mlstars/primitives folder</a>.</p>
+<section id="id1">
+<h4>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>LightFM</p></li>
+<li><p>Keras Sequential LSTMTextClassifier</p></li>
+<li><p>NetworkX Graph Feature Extraction</p></li>
+</ul>
+</section>
+</section>
+<section id="custom-primitives">
+<h3>Custom primitives<a class="headerlink" href="#custom-primitives" title="Permalink to this headline">¶</a></h3>
+<p>The third type are custom primitives implemented specifically for this library. These custom
+primitives may be implemented from scratch or they may be using third party tools in such a way
+as to alter the third party tool’s native behavior to add new functionalities.</p>
+<p>This type of primitives consist of Python code that can be found inside the <a class="reference external" href="https://github.com/sintel-dev/ml-stars/blob/master/mlstars/custom">mlstars/custom module</a>,
+as well as the corresponding JSON annotations, which can also be found in the <a class="reference external" href="https://github.com/sintel-dev/ml-stars/blob/master/mlstars/primitives">mlstars/primitives folder</a>.</p>
+<section id="id2">
+<h4>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Preprocessing Class Encoder</p></li>
+<li><p>Vocabulary Counter</p></li>
+<li><p>Text Cleaner</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="quickstart.html" title="previous page">Quickstart</a>
+    <a class='right-next' id="next-link" href="../developer_guides/index.html" title="next page">Welcome to the Community</a>
+
+              </div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    <p>
+          &copy; Copyright 2022, MIT Data To AI Lab.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
