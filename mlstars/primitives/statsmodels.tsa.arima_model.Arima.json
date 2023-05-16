@@ -9,7 +9,7 @@
         "subtype": "regressor"
     },
     "modalities": [],
-    "primitive": "mlprimitives.adapters.statsmodels.ARIMA",
+    "primitive": "mlstars.adapters.statsmodels.ARIMA",
     "produce": {
         "method": "predict",
         "args": [
