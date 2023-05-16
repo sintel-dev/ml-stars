@@ -118,7 +118,7 @@ In this case, please follow these steps:
        add you name and e-mail address to the ``contributors`` list while you are at it!
     4. Add a pipeline annotation that uses your primitive inside the pipelines folder, named
        exactly like your primitive, and test it with the command
-       ``mlstars test mlprimitives/pipelines/your.pipeline.json``.
+       ``mlstars test mlstars/pipelines/your.pipeline.json``.
        If adding a pipeline is not possible for any reason, please inform the maintainers, as
        this probably means that a new dataset needs to be added.
 

@@ -54,7 +54,7 @@ def resample(df, rule, on=None, groupby=(), aggregation='mean',
     if on is None and time_index is not None:
         message = (
             'resample `time_series` argument deprecated and will be removed'
-            ' in future versions of MLPrimitives. Please use `on` instead.'
+            ' in future versions of ml-stars. Please use `on` instead.'
         )
         warnings.warn(message, DeprecationWarning, stacklevel=2)
         on = time_index
