@@ -73,7 +73,7 @@ in a new issue and request the necessary changes.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-MLPrimitives could always use more documentation, whether as part of the official MLPrimitives
+ml-stars could always use more documentation, whether as part of the official MLPrimitives
 docs, in docstrings, or even on the web in blog posts, articles, and such, so feel free to
 contribute any changes that you deem necessary, from fixing a simple typo, to writing whole
 new pages of documentation.
