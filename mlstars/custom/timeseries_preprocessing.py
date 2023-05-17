@@ -112,9 +112,9 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
 
 
 _TIME_SEGMENTS_AVERAGE_DEPRECATION_WARNING = (
-    "mlprimitives.custom.timeseries_preprocessing.time_segments_average "
+    "mlstars.custom.timeseries_preprocessing.time_segments_average "
     "is deprecated and will be removed in a future version. Please use "
-    "mlprimitives.custom.timeseries_preprocessing.time_segments_aggregate instead."
+    "mlstars.custom.timeseries_preprocessing.time_segments_aggregate instead."
 )
 
 
