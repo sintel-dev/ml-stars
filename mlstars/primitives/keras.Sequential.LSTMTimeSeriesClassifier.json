@@ -56,7 +56,7 @@
                 "type": "list",
                 "default": [
                     {
-                        "class": "keras.callbacks.EarlyStopping",
+                        "class": "tensorflow.keras.callbacks.EarlyStopping",
                         "args": {
                             "monitor": "val_loss",
                             "patience": 10,
@@ -84,11 +84,11 @@
             },
             "optimizer": {
                 "type": "str",
-                "default": "keras.optimizers.Adam"
+                "default": "tensorflow.keras.optimizers.Adam"
             },
             "loss": {
                 "type": "str",
-                "default": "keras.losses.categorical_crossentropy"
+                "default": "tensorflow.keras.losses.categorical_crossentropy"
             },
             "metrics": {
                 "type": "list",
@@ -104,27 +104,27 @@
                 "type": "list",
                 "default": [
                     {
-                        "class": "keras.layers.LSTM",
+                        "class": "tensorflow.keras.layers.LSTM",
                         "parameters": {
                             "input_shape": "input_shape",
                             "units": "lstm_1_units"
                         }
                     },
                     {
-                        "class": "keras.layers.Dropout",
+                        "class": "tensorflow.keras.layers.Dropout",
                         "parameters": {
                             "rate": "dropout_1_rate"
                         }
                     },
                     {
-                        "class": "keras.layers.Dense",
+                        "class": "tensorflow.keras.layers.Dense",
                         "parameters": {
                             "units": "dense_1_units",
                             "activation": "relu"
                         }
                     },
                     {
-                        "class": "keras.layers.Dense",
+                        "class": "tensorflow.keras.layers.Dense",
                         "parameters": {
                             "units": "dense_units",
                             "activation": "softmax"
