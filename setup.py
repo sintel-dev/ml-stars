@@ -18,7 +18,7 @@ install_requires = [
     'scipy>=1.1.0,<2',
     'statsmodels>=0.9.0,<0.13',
     'tensorflow>=2,<2.13',
-    'xgboost>=0.72.1,<1',
+    'xgboost>=0.72.1,<2',
 
     # fix google/protobuf/descriptor
     'protobuf<4',
@@ -79,10 +79,11 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+	'Programming Language :: Python :: 3.10',
+	'Programming Language :: Python :: 3.11',
     ],
     description='Primitives and Pipelines for Time Series Data.',
     entry_points={
@@ -104,7 +105,7 @@ setup(
     keywords='mlstars',
     name='ml-stars',
     packages=find_packages(include=['mlstars', 'mlstars.*']),
-    python_requires='>=3.6,<3.10',
+    python_requires='>=3.7,<3.12',
     setup_requires=setup_requires,
     test_suite='tests',
     tests_require=tests_require,
