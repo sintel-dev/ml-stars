@@ -3,8 +3,8 @@
 import logging
 import tempfile
 
-import keras
 import numpy as np
+import tensorflow as tf
 
 from mlstars.utils import import_object
 
@@ -14,7 +14,7 @@ LOGGER = logging.getLogger(__name__)
 def build_layer(layer, hyperparameters):
     layer_class = import_object(layer['class'])
     layer_kwargs = layer['parameters'].copy()
-    if issubclass(layer_class, keras.layers.wrappers.Wrapper):
+    if issubclass(layer_class, tf.keras.layers.Wrapper):
         layer_kwargs['layer'] = build_layer(layer_kwargs['layer'], hyperparameters)
     for key, value in layer_kwargs.items():
         if isinstance(value, str):
@@ -29,7 +29,7 @@ class Sequential(object):
         state = self.__dict__.copy()
 
         with tempfile.NamedTemporaryFile(suffix='.hdf5', delete=False) as fd:
-            keras.models.save_model(state.pop('model'), fd.name, overwrite=True)
+            tf.keras.models.save_model(state.pop('model'), fd.name, overwrite=True)
             state['model_str'] = fd.read()
 
         return state
@@ -39,7 +39,7 @@ class Sequential(object):
             fd.write(state.pop('model_str'))
             fd.flush()
 
-            state['model'] = keras.models.load_model(fd.name)
+            state['model'] = tf.keras.models.load_model(fd.name)
 
         self.__dict__ = state
 
@@ -47,7 +47,7 @@ class Sequential(object):
         hyperparameters = self.hyperparameters.copy()
         hyperparameters.update(kwargs)
 
-        model = keras.models.Sequential()
+        model = tf.keras.models.Sequential()
 
         for layer in self.layers:
             built_layer = build_layer(layer, hyperparameters)
@@ -106,7 +106,7 @@ class Sequential(object):
             self.model = self._build_model(**kwargs)
 
         if self.classification:
-            y = keras.utils.to_categorical(y)
+            y = tf.keras.utils.to_categorical(y)
 
         callbacks = [
             callback['class'](**callback.get('args', dict()))

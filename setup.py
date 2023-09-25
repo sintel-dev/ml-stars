@@ -10,14 +10,14 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
     history = history_file.read()
 
 install_requires = [
-    'Keras>=2.4,<2.5',
-    'mlblocks>=0.4,<0.6',
+    'Keras>=2.4,<2.13',
+    'mlblocks>=0.6',
     'numpy<1.21.0,>=1.16.0',
     'pandas>=1,<2',
     'scikit-learn>=0.21,<1.2',
     'scipy>=1.1.0,<2',
     'statsmodels>=0.9.0,<0.13',
-    'tensorflow>=2,<2.5',
+    'tensorflow>=2,<2.13',
     'xgboost>=0.72.1,<1',
 
     # fix google/protobuf/descriptor
@@ -82,6 +82,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
     description='Primitives and Pipelines for Time Series Data.',
     entry_points={
@@ -103,11 +104,11 @@ setup(
     keywords='mlstars',
     name='ml-stars',
     packages=find_packages(include=['mlstars', 'mlstars.*']),
-    python_requires='>=3.6,<3.9',
+    python_requires='>=3.6,<3.10',
     setup_requires=setup_requires,
     test_suite='tests',
     tests_require=tests_require,
     url='https://github.com/sintel-dev/ml-stars',
-    version='0.1.1',
+    version='0.1.3.dev1',
     zip_safe=False,
 )
