@@ -11,12 +11,12 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
 
 install_requires = [
     'Keras>=2.4,<2.13',
-    'mlblocks>=0.6',
-    'numpy<1.21.0,>=1.16.0',
-    'pandas>=1,<2',
+    'mlblocks>=0.6.1',
+    'numpy>=1.17.4',
+    'pandas>=1,<3',
     'scikit-learn>=0.21,<1.2',
     'scipy>=1.1.0,<2',
-    'statsmodels>=0.9.0,<0.13',
+    'statsmodels>=0.12.0,<=0.14',
     'tensorflow>=2,<2.13',
     'xgboost>=0.72.1,<2',
 
