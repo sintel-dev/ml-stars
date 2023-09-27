@@ -46,10 +46,8 @@ development_requires = [
     'nbsphinx>=0.5.0,<0.7',
     'Sphinx>=3,<3.3',
     'pydata-sphinx-theme<0.5',
-    # 'autodocsumm>=0.1.10,<1',
     'markupsafe<2.1.0',
     'ipython>=6.5,<9',
-    # 'mistune>=0.7,<2',
     'Jinja2>=2,<3',
     
     # style check
