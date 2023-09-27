@@ -5,7 +5,7 @@ import pandas as pd
 from numpy.testing import assert_allclose
 
 from mlstars.custom.timeseries_preprocessing import (
-    cutoff_window_sequences, intervals_to_mask, rolling_window_sequences, time_segments_aggregate)
+    cutoff_window_sequences, intervals_to_mask, rolling_window_sequences, time_segments_aggregate,)
 
 
 class IntervalsToMaskTest(TestCase):

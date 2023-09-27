@@ -1,7 +1,7 @@
-import pytest
 from unittest.mock import patch
 
 import numpy as np
+import pytest
 from numpy.testing import assert_allclose
 
 from mlstars.adapters.statsmodels import ARIMA
@@ -78,4 +78,3 @@ def test_arima_3d(arima_mock):
     X = np.ones(shape=(3, 2, 1))
     with pytest.raises(ValueError):
         arima.predict(X)
-
