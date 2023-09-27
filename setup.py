@@ -12,11 +12,11 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
 install_requires = [
     'Keras>=2.4,<2.13',
     'mlblocks>=0.6.1',
-    'numpy>=1.17.4',
+    'numpy>=1.17.4,<2',
     'pandas>=1,<3',
     'scikit-learn>=0.21,<1.2',
     'scipy>=1.1.0,<2',
-    'statsmodels>=0.12.0,<=0.14',
+    'statsmodels>=0.12.0,<0.15',
     'tensorflow>=2,<2.13',
     'xgboost>=0.72.1,<2',
 
@@ -68,6 +68,7 @@ development_requires = [
     # Advanced testing
     'coverage>=4.5.1',
     'tox>=2.9.1',
+    'invoke',
 ]
 
 setup(

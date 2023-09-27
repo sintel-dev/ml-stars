@@ -111,53 +111,6 @@ def rolling_window_sequences(X, index, window_size, target_size, step_size, targ
     return np.asarray(out_X), np.asarray(out_y), np.asarray(X_index), np.asarray(y_index)
 
 
-_TIME_SEGMENTS_AVERAGE_DEPRECATION_WARNING = (
-    "mlstars.custom.timeseries_preprocessing.time_segments_average "
-    "is deprecated and will be removed in a future version. Please use "
-    "mlstars.custom.timeseries_preprocessing.time_segments_aggregate instead."
-)
-
-
-def time_segments_average(X, interval, time_column):
-    """Compute average of values over given time span.
-
-    Args:
-        X (ndarray or pandas.DataFrame):
-            N-dimensional sequence of values.
-        interval (int):
-            Integer denoting time span to compute average of.
-        time_column (int):
-            Column of X that contains time values.
-
-    Returns:
-        ndarray, ndarray:
-            * Sequence of averaged values.
-            * Sequence of index values (first index of each averaged segment).
-    """
-    warnings.warn(_TIME_SEGMENTS_AVERAGE_DEPRECATION_WARNING, DeprecationWarning)
-
-    if isinstance(X, np.ndarray):
-        X = pd.DataFrame(X)
-
-    X = X.sort_values(time_column).set_index(time_column)
-
-    start_ts = X.index.values[0]
-    max_ts = X.index.values[-1]
-
-    values = list()
-    index = list()
-
-    while start_ts <= max_ts:
-        end_ts = start_ts + interval
-        subset = X.loc[start_ts:end_ts - 1]
-        means = subset.mean(skipna=True).values
-        values.append(means)
-        index.append(start_ts)
-        start_ts = end_ts
-
-    return np.asarray(values), np.asarray(index)
-
-
 def time_segments_aggregate(X, interval, time_column, method=['mean']):
     """Aggregate values over given time span.
 
@@ -269,4 +222,8 @@ def cutoff_window_sequences(X, timeseries, window_size, cutoff_time=None, time_i
 
         output.append(selected.values)
 
-    return np.array(output)
+    output = np.array(output, dtype=object)
+    if output.ndim >= 2:
+        output = output.astype(float)
+
+    return output
