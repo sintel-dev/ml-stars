@@ -1,11 +1,11 @@
 import numpy as np
-from statsmodels.tsa import arima_model
+from statsmodels.tsa.arima import model
 
 
 class ARIMA(object):
     """A Wrapper for the statsmodels.tsa.arima_model.ARIMA class."""
 
-    def __init__(self, p, d, q, steps):
+    def __init__(self, p, d, q, trend, steps):
         """Initialize the ARIMA object.
 
         Args:
@@ -15,12 +15,17 @@ class ARIMA(object):
                 Integer denoting the degree of differencing.
             q (int):
                 Integer denoting the order of the moving-average model.
+            trend (str):
+                Parameter controlling the deterministic trend. Can be specified
+                as a string where 'c' indicates a constant term, 't' indicates
+                a linear trend in time, and 'ct' includes both.
             steps (int):
                 Integer denoting the number of time steps to predict ahead.
         """
         self.p = p
         self.d = d
         self.q = q
+        self.trend = trend
         self.steps = steps
 
     def predict(self, X):
@@ -45,8 +50,8 @@ class ARIMA(object):
 
         num_sequences = len(X)
         for sequence in range(num_sequences):
-            arima = arima_model.ARIMA(X[sequence], order=(self.p, self.d, self.q))
-            arima_fit = arima.fit(disp=0)
+            arima = model.ARIMA(X[sequence], order=(self.p, self.d, self.q), trend=self.trend)
+            arima_fit = arima.fit()
             arima_results.append(arima_fit.forecast(self.steps)[0])
 
         arima_results = np.asarray(arima_results)
