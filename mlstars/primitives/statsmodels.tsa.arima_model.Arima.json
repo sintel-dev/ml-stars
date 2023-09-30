@@ -1,8 +1,7 @@
 {
-    "name": "statsmodels.tsa.arima.model.ARIMA",
+    "name": "statsmodels.tsa.arima_model.Arima",
     "contributors": [
-        "Alexander Geiger <geigera@mit.edu>",
-        "Sarah Alnegheimish <smish@mit.edu>"
+        "Alexander Geiger <geigera@mit.edu>"
     ],
     "description": "ARIMA Model",
     "classifiers": {
