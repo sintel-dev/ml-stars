@@ -4,10 +4,11 @@ import numpy as np
 from statsmodels.tsa.arima import model
 
 _ARIMA_MODEL_DEPRECATION_WARNING = (
-    "mstatsmodels.tsa.arima_model.Arima is deprecated "
+    "statsmodels.tsa.arima_model.Arima is deprecated "
     "and will be removed in a future version. Please use "
     "statsmodels.tsa.arima.model.ARIMA instead."
 )
+
 
 class ARIMA(object):
     """A Wrapper for the statsmodels.tsa.arima.model.ARIMA class."""
