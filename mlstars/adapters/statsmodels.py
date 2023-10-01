@@ -1,9 +1,17 @@
+import warnings
+
 import numpy as np
 from statsmodels.tsa.arima import model
 
+_ARIMA_MODEL_DEPRECATION_WARNING = (
+    "statsmodels.tsa.arima_model.Arima is deprecated "
+    "and will be removed in a future version. Please use "
+    "statsmodels.tsa.arima.model.ARIMA instead."
+)
+
 
 class ARIMA(object):
-    """A Wrapper for the statsmodels.tsa.arima_model.ARIMA class."""
+    """A Wrapper for the statsmodels.tsa.arima.model.ARIMA class."""
 
     def __init__(self, p, d, q, trend, steps):
         """Initialize the ARIMA object.
@@ -22,6 +30,8 @@ class ARIMA(object):
             steps (int):
                 Integer denoting the number of time steps to predict ahead.
         """
+        warnings.warn(_ARIMA_MODEL_DEPRECATION_WARNING, DeprecationWarning)
+
         self.p = p
         self.d = d
         self.q = q

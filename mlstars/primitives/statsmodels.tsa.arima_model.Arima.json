@@ -1,10 +1,9 @@
 {
-    "name": "statsmodels.tsa.arima.model.ARIMA",
+    "name": "statsmodels.tsa.arima_model.Arima",
     "contributors": [
-        "Alexander Geiger <geigera@mit.edu>",
-        "Sarah Alnegheimish <smish@mit.edu>"
+        "Alexander Geiger <geigera@mit.edu>"
     ],
-    "description": "ARIMA Model",
+    "description": "ARIMA Model; mstatsmodels.tsa.arima_model.Arima is deprecated and will be removed in a future version. Please use statsmodels.tsa.arima.model.ARIMA instead.",
     "classifiers": {
         "type": "estimator",
         "subtype": "regressor"
