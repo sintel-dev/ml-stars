@@ -14,10 +14,10 @@ install_requires = [
     'mlblocks>=0.6.1',
     'numpy>=1.17.4,<2',
     'pandas>=1,<3',
-    'scikit-learn>=0.21,<1.2',
-    'scipy>=1.1.0,<2',
+    'scikit-learn>=0.22,<1.2',
+    'scipy>=1.4.1,<2',
     'statsmodels>=0.12.0,<0.15',
-    'tensorflow>=2,<2.13',
+    'tensorflow>=2.2,<2.13',
     'xgboost>=0.72.1,<2',
 
     # fix google/protobuf/descriptor
