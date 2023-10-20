@@ -31,7 +31,7 @@ combine third party tools or implement new functionalities from scratch.
 
 ## Requirements
 
-**ml-stars** has been developed and tested on [Python 3.6, 3.7, 3.8, and 3.9](https://www.python.org/downloads/)
+**ml-stars** has been developed and tested on [Python 3.8, 3.9, 3.10, and 3.11](https://www.python.org/downloads/)
 
 Also, although it is not strictly required, the usage of a
 [virtualenv](https://virtualenv.pypa.io/en/latest/) is highly recommended in order to avoid
