@@ -10,15 +10,15 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
     history = history_file.read()
 
 install_requires = [
-    'Keras>=2.4,<2.13',
-    'mlblocks>=0.6',
-    'numpy<1.21.0,>=1.16.0',
-    'pandas>=1,<2',
-    'scikit-learn>=0.21,<1.2',
-    'scipy>=1.1.0,<2',
-    'statsmodels>=0.9.0,<0.13',
-    'tensorflow>=2,<2.13',
-    'xgboost>=0.72.1,<1',
+    'Keras>=2.4,<2.15',
+    'mlblocks>=0.6.1',
+    'numpy>=1.17.4,<2',
+    'pandas>=1,<3',
+    'scikit-learn>=0.22,<1.2',
+    'scipy>=1.4.1,<2',
+    'statsmodels>=0.12.0,<0.15',
+    'tensorflow>=2.2,<2.15',
+    'xgboost>=0.72.1,<2',
 
     # fix google/protobuf/descriptor
     'protobuf<4',
@@ -46,10 +46,8 @@ development_requires = [
     'nbsphinx>=0.5.0,<0.7',
     'Sphinx>=3,<3.3',
     'pydata-sphinx-theme<0.5',
-    'autodocsumm>=0.1.10,<1',
     'markupsafe<2.1.0',
-    'ipython>=6.5,<7.5',
-    'mistune>=0.7,<2',
+    'ipython>=6.5,<9',
     'Jinja2>=2,<3',
     
     # style check
@@ -68,6 +66,7 @@ development_requires = [
     # Advanced testing
     'coverage>=4.5.1',
     'tox>=2.9.1',
+    'invoke',
 ]
 
 setup(
@@ -79,10 +78,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     description='Primitives and Pipelines for Time Series Data.',
     entry_points={
@@ -104,11 +103,11 @@ setup(
     keywords='mlstars',
     name='ml-stars',
     packages=find_packages(include=['mlstars', 'mlstars.*']),
-    python_requires='>=3.6,<3.10',
+    python_requires='>=3.8,<3.12',
     setup_requires=setup_requires,
     test_suite='tests',
     tests_require=tests_require,
     url='https://github.com/sintel-dev/ml-stars',
-    version='0.1.3',
+    version='0.2.0.dev0',
     zip_safe=False,
 )

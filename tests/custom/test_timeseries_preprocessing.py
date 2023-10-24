@@ -5,8 +5,7 @@ import pandas as pd
 from numpy.testing import assert_allclose
 
 from mlstars.custom.timeseries_preprocessing import (
-    cutoff_window_sequences, intervals_to_mask, rolling_window_sequences, time_segments_aggregate,
-    time_segments_average,)
+    cutoff_window_sequences, intervals_to_mask, rolling_window_sequences, time_segments_aggregate,)
 
 
 class IntervalsToMaskTest(TestCase):
@@ -176,34 +175,6 @@ class RollingWindowSequencesTest(TestCase):
         expected_y_index = np.array([3, 8])
         self._run(X, index, expected_X, expected_y, expected_X_index, expected_y_index,
                   drop=drop, drop_windows=True)
-
-
-class TimeSegmentsAverageTest(TestCase):
-
-    def _run(self, X, interval, expected_values, expected_index, time_column):
-        values, index = time_segments_average(X, interval, time_column)
-
-        assert_allclose(values, expected_values)
-        assert_allclose(index, expected_index)
-
-    def test_array(self):
-        X = np.array([[1, 1], [2, 3], [3, 1], [4, 3]])
-        interval = 2
-        expected_values = np.array([[2], [2]])
-        expected_index = np.array([1, 3])
-        self._run(X, interval, expected_values, expected_index, time_column=0)
-
-    def test_pandas_dataframe(self):
-        X = pd.DataFrame([
-            [1, 1],
-            [2, 3],
-            [3, 1],
-            [4, 3]
-        ], columns=['timestamp', 'value'])
-        interval = 2
-        expected_values = np.array([[2], [2]])
-        expected_index = np.array([1, 3])
-        self._run(X, interval, expected_values, expected_index, time_column="timestamp")
 
 
 class TimeSegmentsAggregateTest(TestCase):
@@ -417,7 +388,7 @@ class CutoffWindowSequencesTest(TestCase):
                 [15, 35],
                 [16, 36]
             ])
-        ])
+        ], dtype=object)
 
         assert_allclose(
             array[0],

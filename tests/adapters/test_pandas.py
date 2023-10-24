@@ -3,7 +3,7 @@ from unittest import TestCase
 
 import numpy as np
 import pandas as pd
-from pandas.util.testing import assert_frame_equal
+from pandas.testing import assert_frame_equal
 
 from mlstars.adapters.pandas import resample
 
