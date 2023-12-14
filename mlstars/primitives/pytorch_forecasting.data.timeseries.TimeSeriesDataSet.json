@@ -1,0 +1,92 @@
+{
+    "name": "pytorch_forecasting.data.timeseries.TimeSeriesDataSet",
+    "contributors": [
+        "Brendon Reperttang <boom90lb@mit.edu>"
+    ],
+    "documentation": "https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html",
+    "description": "Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns).",
+    "classifiers": {
+        "type": "helper",
+        "subtype": "fitting"
+    },
+    "modalities": [],
+    "primitive": "pytorch_forecasting.data.timeseries.TimeSeriesDataSet",
+    "produce": {
+        "args": [
+            {
+                "name": "X",
+                "keyword": "data",
+                "type": "DataFrame"
+            }
+        ],
+        "output": [
+            {
+                "name": "dataset",
+                "type": "TimeSeriesDataSet"
+            }
+        ]
+    },
+    "hyperparameters": {
+        "fixed": {
+            "time_idx": {
+                "type": "str",
+                "default": "time_idx",
+                "description": "Name of time_idx column, denoting the order of examples."
+            },
+            "target": {
+                "type": "str",
+                "default": "target",
+                "description": "Name of target column, providing ground truth labels."
+            },
+            "group_ids": {
+                "type": "ndarray",
+                "default": null,
+                "description": "If provided, the names of columns that associate groups of examples together with their own set of time_idx."
+            },
+            "static_categoricals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "static_reals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "time_varying_unknown_categoricals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "time_varying_known_categoricals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "time_varying_unknown_reals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "time_varying_known_reals": {
+                "type": "ndarray",
+                "default": null
+            },
+            "allow_missing_timesteps": {
+                "type": "bool",
+                "default": true
+            },
+            "min_encoder_length": {
+                "type": "int",
+                "default": 1
+            },
+            "min_prediction_length": {
+                "type": "int",
+                "default": 1
+            },
+            "max_encoder_length": {
+                "type": "int",
+                "default": 16
+            },
+            "max_prediction_length": {
+                "type": "int",
+                "default": 8
+            }
+        }
+    }
+}

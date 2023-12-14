@@ -115,3 +115,6 @@ output/
 *.pkl
 
 .DS_Store
+
+# tftmodel (WIP folder)
+/tftmodel/
