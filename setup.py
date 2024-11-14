@@ -82,6 +82,8 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',    
     ],
     description='Primitives and Pipelines for Time Series Data.',
     entry_points={
@@ -103,7 +105,7 @@ setup(
     keywords='mlstars',
     name='ml-stars',
     packages=find_packages(include=['mlstars', 'mlstars.*']),
-    python_requires='>=3.8,<3.12',
+    python_requires='>=3.8,<3.14',
     setup_requires=setup_requires,
     test_suite='tests',
     tests_require=tests_require,
