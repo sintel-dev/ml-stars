@@ -38,7 +38,7 @@ development_requires = [
     # general
     'bumpversion>=0.5.3,<0.6',
     'pip>=9.0.1',
-    'watchdog>=0.8.3,<0.11',
+    'watchdog>=0.8.3,<7',
 
     # docs
     'docutils>=0.12,<0.18',
@@ -49,6 +49,15 @@ development_requires = [
     'markupsafe<2.1.0',
     'ipython>=6.5,<9',
     'Jinja2>=2,<3',
+
+    # fails on Sphinx < v3.4
+    'alabaster<=0.7.12',
+    # fails on Sphins < v5.0
+    'sphinxcontrib-applehelp<1.0.8',
+    'sphinxcontrib-devhelp<1.0.6',
+    'sphinxcontrib-htmlhelp<2.0.5',
+    'sphinxcontrib-serializinghtml<1.1.10',
+    'sphinxcontrib-qthelp<1.0.7',
     
     # style check
     'flake8>=3.7.7,<4',
