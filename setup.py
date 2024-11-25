@@ -10,14 +10,14 @@ with open('HISTORY.md', encoding='utf-8') as history_file:
     history = history_file.read()
 
 install_requires = [
-    'Keras>=2.4,<2.15',
-    'mlblocks>=0.6.1',
+    'Keras>=2.4,<4',
+    'mlblocks>=0.6.2',
     'numpy>=1.17.4,<2',
     'pandas>=1,<3',
-    'scikit-learn>=0.22,<1.2',
+    'scikit-learn>=0.22,<2',
     'scipy>=1.4.1,<2',
     'statsmodels>=0.12.0,<0.15',
-    'tensorflow>=2.2,<2.15',
+    'tensorflow>=2.2,<3',
     'xgboost>=0.72.1,<2',
 
     # fix google/protobuf/descriptor
@@ -38,7 +38,7 @@ development_requires = [
     # general
     'bumpversion>=0.5.3,<0.6',
     'pip>=9.0.1',
-    'watchdog>=0.8.3,<0.11',
+    'watchdog>=0.8.3,<7',
 
     # docs
     'docutils>=0.12,<0.18',
@@ -49,6 +49,15 @@ development_requires = [
     'markupsafe<2.1.0',
     'ipython>=6.5,<9',
     'Jinja2>=2,<3',
+
+    # fails on Sphinx < v3.4
+    'alabaster<=0.7.12',
+    # fails on Sphins < v5.0
+    'sphinxcontrib-applehelp<1.0.8',
+    'sphinxcontrib-devhelp<1.0.6',
+    'sphinxcontrib-htmlhelp<2.0.5',
+    'sphinxcontrib-serializinghtml<1.1.10',
+    'sphinxcontrib-qthelp<1.0.7',
     
     # style check
     'flake8>=3.7.7,<4',
@@ -82,6 +91,7 @@ setup(
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
     ],
     description='Primitives and Pipelines for Time Series Data.',
     entry_points={
@@ -103,11 +113,11 @@ setup(
     keywords='mlstars',
     name='ml-stars',
     packages=find_packages(include=['mlstars', 'mlstars.*']),
-    python_requires='>=3.8,<3.12',
+    python_requires='>=3.8,<3.13',
     setup_requires=setup_requires,
     test_suite='tests',
     tests_require=tests_require,
     url='https://github.com/sintel-dev/ml-stars',
-    version='0.2.0',
+    version='0.2.1.dev1',
     zip_safe=False,
 )
