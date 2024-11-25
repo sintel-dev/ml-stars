@@ -1,5 +1,11 @@
 # History
 
+## 0.2.1 – 2024-11-25
+
+* Adapter for MinMaxScaler [Issue #16](https://github.com/sintel-dev/ml-stars/issues/16) - by @sarahmish 
+* Add python 3.12 [Issue #15](https://github.com/sintel-dev/ml-stars/issues/15) - by @sarahmish 
+
+
 ## 0.2.0 – 2023-10-24
 
 * Upgrade python tests & remove python 3.7 [Issue #11](https://github.com/sintel-dev/ml-stars/issues/11) - by @sarahmish
