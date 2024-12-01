@@ -1,0 +1,109 @@
+{
+    "name": "TemporalFusionTransformer",
+    "contributors": [
+        "Brendon Reperttang <boom90lb@mit.edu>"
+    ],
+    "documentation": "https://pytorch-forecasting.readthedocs.io/en/stable/api/pytorch_forecasting.models.temporal_fusion_transformer.TemporalFusionTransformer.html",
+    "description": "Implementation of the article Temporal Fusion Transformers for Interpretable Multi-horizon Time Series Forecasting. The network outperforms DeepAR by Amazon by 36-69% in benchmarks.",
+    "classifiers": {
+        "type": "estimator",
+        "subtype": "regressor"
+    },
+    "modalities": [],
+    "primitive": "pytorch_forecasting.models.temporal_fusion_transformer.TemporalFusionTransformer",
+    "produce": {
+        "method": "from_dataset",
+        "args": [
+            {
+                "name": "dataset",
+                "type": "TimeSeriesDataSet"
+            }
+        ],
+        "output": [
+            {
+                "name": "model",
+                "type": "TemporalFusionTransformer"
+            }
+        ]
+    },
+    "hyperparameters": {
+        "fixed": {
+            "hidden_size": {
+                "type": "int",
+                "default": 256,
+                "range": [
+                    8,
+                    512
+                ]
+            },
+            "hidden_continuous_size": {
+                "type": "int",
+                "default": 256,
+                "range": [
+                    8,
+                    512
+                ]
+            },
+            "lstm_layers": {
+                "type": "int",
+                "default": 2
+            },
+            "output_size": {
+                "type": "int",
+                "default": 1
+            },
+            "attention_head_size": {
+                "type": "int",
+                "default": 4
+            },
+            "max_encoder_length": {
+                "type": "int",
+                "default": 32
+            },
+            "allowed_encoder_known_variable_names": {
+                "type": "ndarray",
+                "default": null
+            },
+            "log_val_interval": {
+                "type": "int",
+                "default": 1
+            },
+            "reduce_on_plateau_patience": {
+                "type": "int",
+                "default": 4
+            },
+            "share_single_variable_networks": {
+                "type": "bool",
+                "default": false
+            },
+            "causal_attention": {
+                "type": "bool",
+                "default": true
+            },
+            "optimizer": {
+                "type": "str",
+                "default": "Adam"
+            },
+            "loss": {
+                "type": "function"
+            },
+            "tunable": {
+                "dropout": {
+                    "type": "float",
+                    "default": 0.25,
+                    "range": [
+                        0,
+                        1
+                    ]
+                },
+                "learning_rate": {
+                    "type": "float",
+                    "default": 0.01,
+                    "range": [
+                        0,
+                        1
+                    ]
+                }
+        }
+    }
+}
