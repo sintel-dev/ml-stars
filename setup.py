@@ -118,6 +118,6 @@ setup(
     test_suite='tests',
     tests_require=tests_require,
     url='https://github.com/sintel-dev/ml-stars',
-    version='0.2.2.dev0',
+    version='0.2.2.dev1',
     zip_safe=False,
 )
