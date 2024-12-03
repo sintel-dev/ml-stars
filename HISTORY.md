@@ -1,5 +1,9 @@
 # History
 
+## 0.2.2 – 2024-12-03
+
+* ``SimpleImputer`` primitive update [Issue#17](https://github.com/sintel-dev/ml-stars/issues/17) - by @sarahmish
+
 ## 0.2.1 – 2024-11-25
 
 * Adapter for MinMaxScaler [Issue #16](https://github.com/sintel-dev/ml-stars/issues/16) - by @sarahmish 
