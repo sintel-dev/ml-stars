@@ -1,8 +1,12 @@
 # History
 
-## 0.2.2 – 2024-12-03
+## 0.2.3 – 2024-12-10
 
 * ``SimpleImputer`` primitive update [Issue#17](https://github.com/sintel-dev/ml-stars/issues/17) - by @sarahmish
+
+## 0.2.2 – 2024-12-03
+
+Re-release of previous version
 
 ## 0.2.1 – 2024-11-25
 
